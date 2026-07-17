@@ -208,3 +208,32 @@ width:90%;
 }
 
 }
+.featured{
+padding:60px 8%;
+text-align:center;
+}
+
+.featured-card{
+max-width:700px;
+margin:auto;
+background:#1e293b;
+padding:30px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(56,189,248,.2);
+}
+
+.featured-card h3{
+color:#38bdf8;
+margin-bottom:15px;
+}
+
+.featured-card a{
+display:inline-block;
+margin-top:20px;
+padding:12px 24px;
+background:#38bdf8;
+color:#000;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
