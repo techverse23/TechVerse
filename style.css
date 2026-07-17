@@ -189,3 +189,22 @@ margin:15px 0;
 border-radius:10px;
 
 }
+@media(max-width:600px){
+
+.hero h2{
+font-size:28px;
+}
+
+.tool-container{
+grid-template-columns:1fr;
+}
+
+.category-buttons{
+justify-content:center;
+}
+
+.search-box input{
+width:90%;
+}
+
+}
