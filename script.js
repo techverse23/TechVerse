@@ -61,3 +61,28 @@ card.style.display = "none";
 });
 
 });
+const categoryButtons = document.querySelectorAll(".category-buttons button");
+const toolCards = document.querySelectorAll(".tool-card");
+
+categoryButtons.forEach(button => {
+
+    button.addEventListener("click", function(){
+
+        let category = this.innerText.toLowerCase();
+
+        toolCards.forEach(card => {
+
+            let cardText = card.innerText.toLowerCase();
+
+            if(category === "all" || cardText.includes(category)){
+                card.style.display = "block";
+            }
+            else{
+                card.style.display = "none";
+            }
+
+        });
+
+    });
+
+});
