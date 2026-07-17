@@ -42,29 +42,38 @@ font-weight:bold;
 }
 
 .hero{
+padding:100px 20px;
 text-align:center;
-padding:80px 20px;
+background:linear-gradient(135deg,#0f172a,#1e3a8a,#0ea5e9);
+border-radius:0 0 30px 30px;
 }
 
 .hero h2{
-font-size:42px;
+font-size:48px;
 margin-bottom:20px;
 }
 
 .hero p{
+font-size:18px;
 max-width:700px;
-margin:auto;
-margin-bottom:20px;
+margin:0 auto 30px;
+color:#e2e8f0;
 }
 
 .hero button{
-padding:15px 30px;
+padding:15px 35px;
 border:none;
-border-radius:8px;
+border-radius:50px;
 background:#38bdf8;
-color:black;
+color:#000;
+font-size:18px;
 font-weight:bold;
 cursor:pointer;
+transition:.3s;
+}
+
+.hero button:hover{
+transform:scale(1.05);
 }
 .tools,
 .categories,
