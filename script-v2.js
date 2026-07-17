@@ -32,3 +32,16 @@ topBtn.onclick = function () {
     behavior: "smooth"
   });
 };
+const themeToggle = document.getElementById("themeToggle");
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", function () {
+    document.body.classList.toggle("light-mode");
+
+    if (document.body.classList.contains("light-mode")) {
+      themeToggle.innerHTML = "🌙 Dark Mode";
+    } else {
+      themeToggle.innerHTML = "☀️ Light Mode";
+    }
+  });
+}
