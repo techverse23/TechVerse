@@ -228,3 +228,26 @@ transform:translateY(-8px);
 color:#38bdf8;
 margin-bottom:10px;
 }
+.newsletter{
+padding:60px 8%;
+text-align:center;
+background:#111827;
+}
+
+.newsletter input{
+width:300px;
+max-width:90%;
+padding:12px;
+border:none;
+border-radius:8px;
+margin:10px;
+}
+
+.newsletter button{
+padding:12px 24px;
+border:none;
+border-radius:8px;
+background:#38bdf8;
+font-weight:bold;
+cursor:pointer;
+}
