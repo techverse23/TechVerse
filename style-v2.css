@@ -165,3 +165,18 @@ border:none;
 border-radius:8px;
 outline:none;
 }
+.light-mode{
+background:#ffffff;
+color:#111827;
+}
+
+.light-mode header,
+.light-mode footer{
+background:#f1f5f9;
+}
+
+.light-mode .tool-card,
+.light-mode .news-card,
+.light-mode .faq-item{
+background:#e2e8f0;
+}
