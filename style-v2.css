@@ -308,3 +308,32 @@ object-fit:contain;
 margin-bottom:15px;
 border-radius:15px;
 }
+@media(max-width:600px){
+
+header{
+padding:20px;
+}
+
+nav{
+flex-direction:column;
+gap:10px;
+text-align:center;
+}
+
+.logo h1{
+font-size:28px;
+}
+
+.tool-container{
+grid-template-columns:1fr;
+}
+
+.hero h2{
+font-size:32px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+}
