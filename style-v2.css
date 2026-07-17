@@ -368,3 +368,51 @@ font-size:14px;
 }
 
 }
+.hero{
+text-align:center;
+padding:80px 20px;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:20px;
+color:#fff;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+font-size:18px;
+color:#d1d5db;
+margin-bottom:30px;
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn-primary,
+.btn-secondary{
+padding:14px 28px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.btn-primary{
+background:#38bdf8;
+color:#000;
+}
+
+.btn-secondary{
+border:2px solid #38bdf8;
+color:#38bdf8;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover{
+opacity:.9;
+}
