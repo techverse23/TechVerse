@@ -180,3 +180,24 @@ background:#f1f5f9;
 .light-mode .faq-item{
 background:#e2e8f0;
 }
+.stats{
+display:flex;
+justify-content:center;
+gap:20px;
+padding:50px 8%;
+flex-wrap:wrap;
+}
+
+.stat-box{
+background:#1e293b;
+padding:25px;
+border-radius:15px;
+width:220px;
+text-align:center;
+}
+
+.stat-box h2{
+font-size:36px;
+color:#38bdf8;
+margin-bottom:10px;
+}
