@@ -418,3 +418,16 @@ color:#38bdf8;
 .btn-secondary:hover{
 opacity:.9;
 }
+#themeToggle{
+padding:10px 18px;
+border:none;
+border-radius:20px;
+background:#38bdf8;
+color:#000;
+font-weight:bold;
+cursor:pointer;
+}
+
+#themeToggle:hover{
+transform:scale(1.05);
+}
