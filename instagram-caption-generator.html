@@ -1,1 +1,215 @@
-<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Instagram Caption Generator | TechVerse</title><link rel='stylesheet' href='style-v2.css'></head><body><header><div class='logo'><h1>⚡ TechVerse</h1><p>AI & Future Technology</p></div><nav><a href='index.html'>Home</a> <a href='about.html'>About</a> <a href='contact.html'>Contact</a></nav></header><section class='hero'><h2>📸 Instagram Caption Generator</h2><p>Enter your topic and choose a style.</p><select id='style'><option>Professional</option><option>Funny</option><option>Motivational</option><option>Travel</option><option>AI</option></select><br><br><input id='topic' placeholder='Example: AI Tools'><br><br><button onclick='gen()'>Generate</button> <button onclick='copyCap()'>📋 Copy</button> <button onclick='clr()'>🗑 Clear</button><h3>Your Caption</h3><div id='out'></div></section><script>function gen(){let s=style.value,t=topic.value.trim();if(!t){out.innerText='Please enter a topic.';return;}let c={Professional:`Discover ${t} and take your skills to the next level. 🚀 #Growth`,Funny:`${t}? I wasn't ready for this 😂🔥`,Motivational:`Success starts with ${t}. Keep going! 💪`,Travel:`Exploring ${t}, one adventure at a time 🌍`,AI:`The future of ${t} starts today 🤖✨`};out.innerText=c[s];}function copyCap(){navigator.clipboard.writeText(out.innerText);alert('Caption copied!');}function clr(){topic.value='';out.innerText='';}topic.addEventListener('keypress',e=>{if(e.key==='Enter'){e.preventDefault();gen();}});</script><footer><p>© 2026 TechVerse. All Rights Reserved.</p><p>Created by Syed Shahban</p><p><a href='index.html'>Home</a> | <a href='about.html'>About</a> | <a href='contact.html'>Contact</a> | <a href='privacy.html'>Privacy Policy</a></p></footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free Instagram Caption Generator - AI Captions | TechVerse</title>
+
+<link rel="stylesheet" href="style-v2.css">
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<h1>⚡ TechVerse</h1>
+<p>AI & Future Technology</p>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<h2>📸 Instagram Caption Generator</h2>
+
+<p>Create captions instantly with AI style.</p>
+
+
+<select id="style">
+
+<option value="Professional">Professional</option>
+<option value="Funny">Funny</option>
+<option value="Motivational">Motivational</option>
+<option value="Travel">Travel</option>
+<option value="AI">AI</option>
+
+</select>
+
+
+<br><br>
+
+
+<input id="topic" placeholder="Example: AI Tools">
+
+
+<br><br>
+
+
+<button onclick="gen()">Generate</button>
+
+<button onclick="copyCap()">📋 Copy</button>
+
+<button onclick="clr()">🗑 Clear</button>
+
+
+
+<h3>Your Caption</h3>
+
+<div id="out"></div>
+
+
+</section>
+
+
+
+<script>
+
+
+function gen(){
+
+let style = document.getElementById("style").value;
+
+let topic = document.getElementById("topic").value.trim();
+
+let output = document.getElementById("out");
+
+
+if(topic === ""){
+
+output.innerText = "Please enter a topic.";
+
+return;
+
+}
+
+
+
+let captions = {
+
+
+Professional:
+`Discover ${topic} and take your skills to the next level. 🚀 #Growth #Success`,
+
+
+
+Funny:
+`${topic}? I wasn't ready for this 😂🔥 #FunnyMoments`,
+
+
+
+Motivational:
+`Success begins with ${topic}. Keep learning and keep growing! 💪✨`,
+
+
+
+Travel:
+`Exploring ${topic}, creating memories one step at a time 🌍✈️`,
+
+
+
+AI:
+`The future of ${topic} starts today 🤖🚀 #ArtificialIntelligence`
+
+
+};
+
+
+
+output.innerText = captions[style];
+
+
+}
+
+
+
+
+function copyCap(){
+
+
+let text = document.getElementById("out").innerText;
+
+
+if(text === ""){
+
+alert("Generate a caption first!");
+
+return;
+
+}
+
+
+navigator.clipboard.writeText(text);
+
+alert("Caption copied!");
+
+}
+
+
+
+
+function clr(){
+
+
+document.getElementById("topic").value="";
+
+document.getElementById("out").innerText="";
+
+
+}
+
+
+
+document.getElementById("topic").addEventListener("keypress", function(e){
+
+
+if(e.key === "Enter"){
+
+gen();
+
+}
+
+
+});
+
+
+</script>
+
+
+
+<footer>
+
+
+<p>© 2026 TechVerse. All Rights Reserved.</p>
+
+<p>Created by Syed Shahban</p>
+
+
+<p>
+
+<a href="index.html">Home</a> |
+
+<a href="about.html">About</a> |
+
+<a href="contact.html">Contact</a> |
+
+<a href="privacy.html">Privacy Policy</a>
+
+</p>
+
+
+</footer>
+
+
+</body>
+
+</html>
