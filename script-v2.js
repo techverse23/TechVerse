@@ -139,3 +139,35 @@ if (toolSearch) {
   });
 
 }
+
+// 🛠 Tools Page Search
+
+const toolSearch = document.getElementById("toolSearch");
+
+if (toolSearch) {
+
+  toolSearch.addEventListener("keyup", function () {
+
+    let value = this.value.toLowerCase();
+
+    let cards = document.querySelectorAll(".tool-card");
+
+    cards.forEach(function(card){
+
+      let text = card.innerText.toLowerCase();
+
+      if(text.includes(value)){
+
+        card.style.display = "block";
+
+      } else {
+
+        card.style.display = "none";
+
+      }
+
+    });
+
+  });
+
+}
