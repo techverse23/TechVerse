@@ -135,7 +135,29 @@ output.innerText = captions[style];
 
 function copyCap(){
 
+function downloadCap(){
 
+let text = document.getElementById("out").innerText;
+
+if(text === ""){
+
+alert("Generate a caption first!");
+
+return;
+
+}
+
+let file = new Blob([text], {type:"text/plain"});
+
+let link = document.createElement("a");
+
+link.href = URL.createObjectURL(file);
+
+link.download = "Instagram-Caption.txt";
+
+link.click();
+
+}
 let text = document.getElementById("out").innerText;
 
 
