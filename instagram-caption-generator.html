@@ -126,7 +126,9 @@ function copyCap(){
 
 let text = document.getElementById("out").innerText;
 
+let tags = `#${topic.replace(/\s+/g,'')} #AI #Technology #Innovation #Future #TechVerse`;
 
+document.getElementById("hashtags").innerText = tags;
 if(text === ""){
 
 alert("Generate a caption first!");
