@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Prompt Generator | TechVerse</title>
+<link rel="stylesheet" href="style-v2.css"></head><body>
+<header><div class="logo"><h1>⚡ TechVerse</h1><p>AI & Future Technology</p></div>
+<nav><a href="index.html">Home</a> <a href="about.html">About</a> <a href="contact.html">Contact</a></nav></header>
+<section class="hero">
+<h2>🤖 AI Prompt Generator</h2>
+<p>Select a prompt type and enter your topic.</p>
+<select id="type">
+<option>Image</option><option>Video</option><option>Product</option><option>Social Media</option>
+</select><br><br>
+<input id="topic" placeholder="Example: futuristic city"><br><br>
+<button onclick="gen()">Generate</button>
+<button onclick="copyP()">📋 Copy</button>
+<button onclick="clr()">🗑 Clear</button>
+<h3>Your Prompt</h3><div id="out"></div>
+</section>
+<script>
+function gen(){
+let t=document.getElementById('type').value;
+let k=document.getElementById('topic').value.trim();
+if(!k){out.innerHTML='Please enter a topic.';return;}
+let p='';
+if(t==='Image')p=`Ultra realistic ${k}, cinematic lighting, 8K, highly detailed, professional composition.`;
+if(t==='Video')p=`Create a cinematic video about ${k}, smooth camera movement, realistic motion, dramatic lighting.`;
+if(t==='Product')p=`Professional product photo of ${k}, studio lighting, clean background, ultra detailed.`;
+if(t==='Social Media')p=`Create an engaging social media post about ${k} with modern style and strong call to action.`;
+out.innerText=p;
+}
+function copyP(){navigator.clipboard.writeText(out.innerText);alert('Prompt copied!');}
+function clr(){topic.value='';out.innerText='';}
+topic.addEventListener('keypress',e=>{if(e.key==='Enter'){e.preventDefault();gen();}});
+</script>
+<footer><p>© 2026 TechVerse. All Rights Reserved.</p><p>Created by Syed Shahban</p><p><a href="index.html">Home</a> | <a href="about.html">About</a> | <a href="contact.html">Contact</a> | <a href="privacy.html">Privacy Policy</a></p></footer>
+</body></html>
