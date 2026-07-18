@@ -6,72 +6,70 @@
 <title>YouTube Title Generator | TechVerse</title>
 <link rel="stylesheet" href="style-v2.css">
 </head>
-
 <body>
-
 <header>
-
 <div class="logo">
 <h1>⚡ TechVerse</h1>
 <p>AI & Future Technology</p>
-
 </div>
-
 <nav>
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
 </nav>
-
 </header>
 
 <section class="hero">
-
 <h2>🎬 YouTube Title Generator</h2>
+<p>Enter your video topic and generate titles.</p>
 
-<p>Enter your video topic and generate catchy YouTube titles.</p>
-
-<input type="text" id="topic" placeholder="Example: AI Tools">
-
+<input id="topic" type="text" placeholder="Example: AI Tools">
 <br><br>
-
-<button onclick="generateTitles()">Generate Titles</button>
+<button onclick="generateTitles()">Generate</button>
+<button onclick="copyTitles()">📋 Copy</button>
+<button onclick="clearTitles()">🗑 Clear</button>
 
 <h3>Generated Titles</h3>
-
-<p id="titles"></p>
-
+<div id="titles"></div>
 </section>
 
 <script>
-
 function generateTitles(){
-
-let topic=document.getElementById("topic").value.trim();
-
-if(topic==""){
+const topic=document.getElementById("topic").value.trim();
+if(!topic){
 document.getElementById("titles").innerHTML="Please enter a topic.";
 return;
 }
-
-document.getElementById("titles").innerHTML=
-"🔥 Top 10 "+topic+" You Must Know<br><br>"+
-"🚀 Best "+topic+" in 2026<br><br>"+
-"😱 "+topic+" Will Change Your Life<br><br>"+
-"💯 Beginner's Guide to "+topic+"<br><br>"+
-"⚡ Everything About "+topic;
-
+const list=[
+`🔥 Top 10 ${topic} You Must Know`,
+`🚀 Best ${topic} in 2026`,
+`💯 Beginner's Guide to ${topic}`,
+`😱 ${topic} Secrets Nobody Tells You`,
+`⚡ Everything About ${topic}`,
+`🎯 ${topic} Tips That Actually Work`,
+`🤖 Best AI Tricks for ${topic}`,
+`📈 Master ${topic} Fast`,
+`✅ ${topic} Explained Simply`,
+`🏆 Ultimate ${topic} Guide`
+];
+document.getElementById("titles").innerHTML=list.join("<br><br>");
 }
-
+function copyTitles(){
+navigator.clipboard.writeText(document.getElementById("titles").innerText);
+alert("Titles copied!");
+}
+function clearTitles(){
+document.getElementById("topic").value="";
+document.getElementById("titles").innerHTML="";
+}
+document.getElementById("topic").addEventListener("keypress",e=>{
+if(e.key==="Enter"){e.preventDefault();generateTitles();}
+});
 </script>
 
 <footer>
-
 <p>© 2026 TechVerse. All Rights Reserved.</p>
-
 <p>Created by Syed Shahban</p>
-
 </footer>
-
 </body>
 </html>
