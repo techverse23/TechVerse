@@ -73,6 +73,22 @@ document.getElementById("result").innerHTML=
 "#Success";
 
 }
+  function copyHashtags() {
+
+let text = document.getElementById("result").innerText;
+
+navigator.clipboard.writeText(text);
+
+alert("Hashtags copied!");
+}
+
+function clearHashtags() {
+
+document.getElementById("keyword").value = "";
+
+document.getElementById("result").innerHTML = "";
+
+  }
 </script>
 
 <footer>
