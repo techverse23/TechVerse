@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Free Instagram Caption Generator - AI Captions | TechVerse</title>
+<title>Free Instagram Caption & Hashtag Generator | TechVerse</title>
 
 <link rel="stylesheet" href="style-v2.css">
 </head>
@@ -32,7 +32,7 @@
 
 <h2>📸 Instagram Caption Generator</h2>
 
-<p>Create captions instantly with AI style.</p>
+<p>Create captions and hashtags instantly with AI style.</p>
 
 
 <select id="style">
@@ -64,13 +64,17 @@
 <button onclick="clr()">🗑 Clear</button>
 
 
+
 <h3>Your Caption</h3>
 
 <div id="out"></div>
 
+
 <h3>Your Hashtags</h3>
 
 <div id="hashtags"></div>
+
+
 </section>
 
 
@@ -86,29 +90,39 @@ let topic = document.getElementById("topic").value.trim();
 
 let output = document.getElementById("out");
 
+let hashtags = document.getElementById("hashtags");
+
 
 if(topic === ""){
 
 output.innerText = "Please enter a topic.";
+
+hashtags.innerText = "";
 
 return;
 
 }
 
 
+
 let captions = {
+
 
 Professional:
 `Discover ${topic} and take your skills to the next level. 🚀 #Growth #Success`,
 
+
 Funny:
 `${topic}? I wasn't ready for this 😂🔥 #FunnyMoments`,
+
 
 Motivational:
 `Success begins with ${topic}. Keep learning and keep growing! 💪✨`,
 
+
 Travel:
 `Exploring ${topic}, creating memories one step at a time 🌍✈️`,
+
 
 AI:
 `The future of ${topic} starts today 🤖🚀 #ArtificialIntelligence`
@@ -116,17 +130,32 @@ AI:
 };
 
 
+
 output.innerText = captions[style];
 
+
+
+let tags = 
+`#${topic.replace(/\s+/g,'')} #AI #Technology #Innovation #Future #TechVerse #Trending`;
+
+
+hashtags.innerText = tags;
+
+
 }
+
 
 
 
 function copyCap(){
 
-let text = document.getElementById("out").innerText;
 
-if(text === ""){
+let caption = document.getElementById("out").innerText;
+
+let tags = document.getElementById("hashtags").innerText;
+
+
+if(caption === ""){
 
 alert("Generate a caption first!");
 
@@ -135,26 +164,38 @@ return;
 }
 
 
-navigator.clipboard.writeText(text);
+let finalText = caption + "\n\n" + tags;
 
-alert("Caption copied!");
+
+navigator.clipboard.writeText(finalText);
+
+
+alert("Caption & Hashtags copied!");
 
 }
+
 
 
 
 function downloadCap(){
 
-let text = document.getElementById("out").innerText;
+
+let caption = document.getElementById("out").innerText;
+
+let tags = document.getElementById("hashtags").innerText;
 
 
-if(text === ""){
+if(caption === ""){
 
 alert("Generate a caption first!");
 
 return;
 
 }
+
+
+
+let text = caption + "\n\n" + tags;
 
 
 let file = new Blob([text], {type:"text/plain"});
@@ -171,27 +212,37 @@ link.download = "Instagram-Caption.txt";
 
 link.click();
 
+
 }
+
+
 
 
 
 function clr(){
 
+
 document.getElementById("topic").value="";
 
 document.getElementById("out").innerText="";
+
+document.getElementById("hashtags").innerText="";
+
 
 }
 
 
 
+
 document.getElementById("topic").addEventListener("keypress", function(e){
+
 
 if(e.key === "Enter"){
 
 gen();
 
 }
+
 
 });
 
@@ -201,6 +252,7 @@ gen();
 
 
 <footer>
+
 
 <p>© 2026 TechVerse. All Rights Reserved.</p>
 
