@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free Hashtag Generator | TechVerse</title>
+
+<link rel="stylesheet" href="style-v2.css">
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<h1>⚡ TechVerse</h1>
+<p>AI & Future Technology</p>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="tools.html">Tools</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h2># Free Hashtag Generator</h2>
+
+<p>Type a keyword and get hashtags instantly.</p>
+
+<input type="text" id="keyword" placeholder="Example: AI Tools">
+
+<br><br>
+
+<button onclick="generateHashtags()">Generate</button>
+
+<h3>Your Hashtags</h3>
+
+<p id="result"></p>
+
+</section>
+
+<script>
+function generateHashtags() {
+
+let keyword = document.getElementById("keyword").value.trim();
+
+if(keyword==""){
+document.getElementById("result").innerHTML="Please enter a keyword.";
+return;
+}
+
+document.getElementById("result").innerHTML=
+"#"+keyword.replace(/\s+/g,"")+"<br>"+
+"#Trending<br>"+
+"#Viral<br>"+
+"#Tech<br>"+
+"#AI<br>"+
+"#Innovation<br>"+
+"#ContentCreator<br>"+
+"#DigitalMarketing<br>"+
+"#Growth<br>"+
+"#Success";
+
+}
+</script>
+
+<footer>
+
+<p>© 2026 TechVerse. All Rights Reserved.</p>
+
+<p>Created by Syed Shahban</p>
+
+</footer>
+
+</body>
+  </html>
