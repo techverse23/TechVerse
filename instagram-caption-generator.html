@@ -58,9 +58,10 @@
 <button onclick="gen()">Generate</button>
 
 <button onclick="copyCap()">📋 Copy</button>
-<button onclick="downloadCap()">⬇️ Download</button>
-<button onclick="clr()">🗑 Clear</button>
 
+<button onclick="downloadCap()">⬇️ Download</button>
+
+<button onclick="clr()">🗑 Clear</button>
 
 
 <h3>Your Caption</h3>
@@ -93,22 +94,137 @@ return;
 }
 
 
-
 let captions = {
-
 
 Professional:
 `Discover ${topic} and take your skills to the next level. 🚀 #Growth #Success`,
 
-
-
 Funny:
 `${topic}? I wasn't ready for this 😂🔥 #FunnyMoments`,
 
-
-
 Motivational:
 `Success begins with ${topic}. Keep learning and keep growing! 💪✨`,
+
+Travel:
+`Exploring ${topic}, creating memories one step at a time 🌍✈️`,
+
+AI:
+`The future of ${topic} starts today 🤖🚀 #ArtificialIntelligence`
+
+};
+
+
+output.innerText = captions[style];
+
+}
+
+
+
+function copyCap(){
+
+let text = document.getElementById("out").innerText;
+
+
+if(text === ""){
+
+alert("Generate a caption first!");
+
+return;
+
+}
+
+
+navigator.clipboard.writeText(text);
+
+alert("Caption copied!");
+
+}
+
+
+
+function downloadCap(){
+
+let text = document.getElementById("out").innerText;
+
+
+if(text === ""){
+
+alert("Generate a caption first!");
+
+return;
+
+}
+
+
+let file = new Blob([text], {type:"text/plain"});
+
+
+let link = document.createElement("a");
+
+
+link.href = URL.createObjectURL(file);
+
+
+link.download = "Instagram-Caption.txt";
+
+
+link.click();
+
+}
+
+
+
+function clr(){
+
+document.getElementById("topic").value="";
+
+document.getElementById("out").innerText="";
+
+}
+
+
+
+document.getElementById("topic").addEventListener("keypress", function(e){
+
+if(e.key === "Enter"){
+
+gen();
+
+}
+
+});
+
+
+</script>
+
+
+
+<footer>
+
+<p>© 2026 TechVerse. All Rights Reserved.</p>
+
+<p>Created by Syed Shahban</p>
+
+
+<p>
+
+<a href="index.html">Home</a> |
+
+<a href="about.html">About</a> |
+
+<a href="contact.html">Contact</a> |
+
+<a href="privacy.html">Privacy Policy</a>
+
+</p>
+
+
+</footer>
+
+
+</body>
+
+</html>`Success begins with ${topic}. Keep learning and keep growing! 💪✨`,
 
 
 
@@ -135,9 +251,57 @@ output.innerText = captions[style];
 
 function copyCap(){
 
+let text = document.getElementById("out").innerText;
+
+if(text === ""){
+
+alert("Generate a caption first!");
+
+return;
+
+}
+
+navigator.clipboard.writeText(text);
+
+alert("Caption copied!");
+
+}
+
+
+
 function downloadCap(){
 
 let text = document.getElementById("out").innerText;
+
+if(text === ""){
+
+alert("Generate a caption first!");
+
+return;
+
+}
+
+let file = new Blob([text], {type:"text/plain"});
+
+let link = document.createElement("a");
+
+link.href = URL.createObjectURL(file);
+
+link.download = "Instagram-Caption.txt";
+
+link.click();
+
+}
+
+
+
+function clr(){
+
+document.getElementById("topic").value="";
+
+document.getElementById("out").innerText="";
+
+}
 
 if(text === ""){
 
