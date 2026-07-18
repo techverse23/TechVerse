@@ -60,17 +60,22 @@ document.getElementById("result").innerHTML="Please enter a keyword.";
 return;
 }
 
-document.getElementById("result").innerHTML=
-"#"+keyword.replace(/\s+/g,"")+"<br>"+
-"#Trending<br>"+
-"#Viral<br>"+
-"#Tech<br>"+
-"#AI<br>"+
-"#Innovation<br>"+
-"#ContentCreator<br>"+
-"#DigitalMarketing<br>"+
-"#Growth<br>"+
-"#Success";
+let hashtags = "#" + keyword.replace(/\s+/g,"") + "<br>";
+
+if(keyword.toLowerCase().includes("ai")){
+hashtags += "#ArtificialIntelligence<br>#ChatGPT<br>#GeminiAI<br>#ClaudeAI<br>#MachineLearning";
+}
+else if(keyword.toLowerCase().includes("travel")){
+hashtags += "#Travel<br>#Adventure<br>#Vacation<br>#Explore<br>#Wanderlust";
+}
+else if(keyword.toLowerCase().includes("food")){
+hashtags += "#Food<br>#Foodie<br>#Cooking<br>#Delicious<br>#Yummy";
+}
+else{
+hashtags += "#Trending<br>#Viral<br>#Success<br>#ContentCreator<br>#DigitalMarketing";
+}
+
+document.getElementById("result").innerHTML = hashtags;
 
 }
   function copyHashtags() {
